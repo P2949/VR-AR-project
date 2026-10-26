@@ -39,5 +39,10 @@ public class ExitDoor : MonoBehaviour, IInteractable
             closedPosition + openOffset;
 
         Debug.Log("Exit door opened.");
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.WinGame();
+        }
     }
 }

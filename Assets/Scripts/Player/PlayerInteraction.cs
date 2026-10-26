@@ -16,6 +16,12 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance != null &&
+            GameManager.Instance.State != GameState.Playing)
+        {
+            return;
+        }
+
         if (!WasInteractionPressed())
             return;
 
